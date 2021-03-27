@@ -1,4 +1,6 @@
 package br.com.hacksmiles
 
-class Form1ViewModel {
+import androidx.lifecycle.ViewModel
+
+class Form1ViewModel : ViewModel() {
 }
