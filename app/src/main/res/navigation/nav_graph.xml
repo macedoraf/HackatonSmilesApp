@@ -7,7 +7,15 @@
 
     <fragment
         android:id="@+id/form1Fragment"
-        android:name="br.com.hacksmiles.Form1Fragment"
+        android:name="br.com.hacksmiles.ui.firstscreen.FirstFormFragment"
         android:label="Form1Fragment"
-        tools:layout="@layout/fragment_form1" />
+        tools:layout="@layout/fragment_form1" >
+        <action
+            android:id="@+id/action_form1Fragment_to_secondFormFragment"
+            app:destination="@id/secondFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFormFragment"
+        android:name="br.com.hacksmiles.ui.seoncscreen.SecondFormFragment"
+        android:label="SecondFormFragment" />
 </navigation>

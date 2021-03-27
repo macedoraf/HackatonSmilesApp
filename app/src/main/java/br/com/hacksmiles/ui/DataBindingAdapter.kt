@@ -1,20 +1,23 @@
-package br.com.hacksmiles
+package br.com.hacksmiles.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
+import br.com.hacksmiles.BR
 
 
-abstract class DataBindingAdapter(private val entries: MutableList<Any>) :
-    RecyclerView.Adapter<DataBindingAdapter.BindingViewHolder>() {
+abstract class DataBindingAdapter(private val entries: MutableList<Any> = mutableListOf()) :
+    RecyclerView.Adapter<DataBindingAdapter.BindingViewHolder>(), BindableAdapter<Any> {
 
     abstract fun getLayoutId(): Int
 
     private fun getObject(position: Int): Any {
         return entries[position]
     }
+
+    override fun getItemCount(): Int = entries.size
 
     override fun onBindViewHolder(holder: BindingViewHolder, position: Int) {
         holder.bind(getObject(position))
@@ -27,9 +30,9 @@ abstract class DataBindingAdapter(private val entries: MutableList<Any>) :
         return BindingViewHolder(binding)
     }
 
-    fun setData(vararg entry: Any) {
+    override fun setData(data: List<Any>) {
         entries.clear()
-        entries.add(entry)
+        entries.addAll(data)
         notifyDataSetChanged()
     }
 

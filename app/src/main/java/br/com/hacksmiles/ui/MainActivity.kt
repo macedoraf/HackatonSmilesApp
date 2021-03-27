@@ -1,7 +1,8 @@
-package br.com.hacksmiles
+package br.com.hacksmiles.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.com.hacksmiles.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
