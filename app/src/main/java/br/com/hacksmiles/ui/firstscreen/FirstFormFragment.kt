@@ -94,7 +94,6 @@ class FirstFormFragment : Fragment() {
 
     private fun RecyclerView.setup() {
         adapter = climateAdapter
-        RecyclerView.LayoutManager
         layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
     }
 }
