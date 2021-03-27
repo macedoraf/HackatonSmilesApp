@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">HackSmiles</string>
+    <string name="vamos_planificar_a_sua_viagem">Vamos planificar a sua viagem?</string>
+    <string name="quantas_pessoas">Quantas pessoas?</string>
+    <string name="data_nascimento">Data nascimento</string>
+    <string name="nome">Nome</string>
+    <string name="gosto_musical">Gosto musical?</string>
+    <string name="prefer_ncia_clim_tica">Preferência climática</string>
 </resources>

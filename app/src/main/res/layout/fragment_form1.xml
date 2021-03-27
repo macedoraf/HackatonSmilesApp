@@ -1,15 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewState"
+            type="br.com.hacksmiles.ui.firstscreen.FirstFormViewState" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_form_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="match_parent"
+        android:paddingHorizontal="30dp">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:text="Testando 123. testando..."
+            android:id="@+id/tv_title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="@string/vamos_planificar_a_sua_viagem"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+            <TextView
+                android:id="@+id/tv_how_many_people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/quantas_pessoas" />
+
+            <Spinner
+                android:id="@+id/sp_how_many_people"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_betwen_from_itens" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nome" />
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_betwen_from_itens"
+                android:hint="@string/nome"
+                android:importantForAutofill="no"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/tv_birth_day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_betwen_from_itens"
+                android:text="@string/data_nascimento" />
+
+            <EditText
+                android:id="@+id/calendar_birth_day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/data_nascimento"
+                android:hint="@string/data_nascimento"
+                android:inputType="date" />
+
+            <TextView
+                android:id="@+id/tv_music_taste"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_betwen_from_itens"
+                android:text="@string/gosto_musical" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sp_music_taste"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_climatic_selector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_betwen_from_itens"
+                android:text="@string/prefer_ncia_clim_tica" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_climatic_selector"
+                data="@{viewState.climates}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Seguinte"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
