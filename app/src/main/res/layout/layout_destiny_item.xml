@@ -3,7 +3,6 @@
 <layout xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="obj"
             type="br.com.hacksmiles.data.model.Destiny" />

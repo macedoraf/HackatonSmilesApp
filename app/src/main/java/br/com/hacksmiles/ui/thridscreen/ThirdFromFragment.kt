@@ -63,8 +63,12 @@ class ThirdFromFragment : Fragment() {
     }
 
     private fun navigateToFourthScreen(position: Int) {
-        viewModel.viewState.destinies.value?.get(position)
-        findNavController().navigate(ThirdFromFragmentDirections.actionThirdFromFragmentToFourthFragment())
+        val data = viewModel.viewState.destinies.value?.get(position)
+        findNavController().navigate(
+            ThirdFromFragmentDirections.actionThirdFromFragmentToFourthFragment(
+                data!!
+            )
+        )
     }
 
     override fun onStart() {

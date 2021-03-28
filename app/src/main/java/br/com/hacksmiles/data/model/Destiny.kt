@@ -1,7 +1,5 @@
 package br.com.hacksmiles.data.model
 
-import androidx.annotation.DrawableRes
-import br.com.hacksmiles.R
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 

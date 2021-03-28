@@ -73,6 +73,12 @@
         android:name="br.com.hacksmiles.ui.fourthscreen.FourthFragment"
         android:label="fragment_fourth"
         tools:layout="@layout/fragment_fourth">
+
+        <argument
+            android:name="destiny"
+            app:argType="br.com.hacksmiles.data.model.Destiny"
+            app:nullable="false" />
+
         <action
             android:id="@+id/action_fourthFragment_to_fifthFragment"
             app:destination="@id/fifthFragment" />
