@@ -92,125 +92,123 @@
                     android:text="@string/prefer_ncia_clim_tica"
                     android:textSize="16sp" />
 
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/margin_betwen_from_itens"
+                    android:layout_marginEnd="10dp"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_beach"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_calor"
+                        app:layout_constraintEnd_toStartOf="@id/img_snow"
+                        app:layout_constraintHorizontal_weight="5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_breach"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_betwen_from_itens"
-                        android:baselineAligned="false"
-                        android:orientation="horizontal">
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="2dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="-2"
+                        android:shadowDy="1"
+                        android:shadowRadius="0.5"
+                        android:text="@string/beach"
+                        android:textColor="@android:color/white"
+                        app:layout_constraintStart_toStartOf="@id/img_beach"
+                        app:layout_constraintTop_toTopOf="@id/img_beach" />
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_weight="0.5">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_snow"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_frio"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="5"
+                        app:layout_constraintStart_toEndOf="@id/img_beach"
+                        app:layout_constraintTop_toTopOf="@id/img_beach" />
 
-                            <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/img_beach"
-                                android:layout_width="match_parent"
-                                android:layout_height="100dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/img_calor" />
-
-                            <androidx.appcompat.widget.AppCompatTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                android:layout_alignParentTop="true"
-                                android:text="Praia"
-                                android:textColor="@android:color/white" />
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5">
-
-                            <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/img_snow"
-                                android:layout_width="match_parent"
-                                android:layout_height="100dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/img_frio" />
-
-                            <androidx.appcompat.widget.AppCompatTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                android:layout_alignParentTop="true"
-                                android:text="Neve"
-                                android:textColor="@android:color/white" />
-
-                        </RelativeLayout>
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_snow"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_betwen_from_itens"
-                        android:baselineAligned="false"
-                        android:orientation="horizontal">
+                        android:layout_marginStart="2dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="-2"
+                        android:shadowDy="1"
+                        android:shadowRadius="0.5"
+                        android:text="@string/snow"
+                        android:textColor="@android:color/white"
+                        app:layout_constraintStart_toStartOf="@id/img_snow"
+                        app:layout_constraintTop_toTopOf="@id/img_snow" />
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_weight="0.5">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_city"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_cidade"
+                        app:layout_constraintEnd_toStartOf="@id/img_mountains"
+                        app:layout_constraintHorizontal_weight="5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/img_beach" />
 
-                            <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/img_city"
-                                android:layout_width="match_parent"
-                                android:layout_height="100dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/img_cidade" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="-2"
+                        android:shadowDy="1"
+                        android:shadowRadius="0.5"
+                        android:text="@string/city"
+                        android:textColor="@android:color/white"
+                        app:layout_constraintStart_toStartOf="@id/img_city"
+                        app:layout_constraintTop_toTopOf="@id/img_city" />
 
-                            <androidx.appcompat.widget.AppCompatTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                android:layout_alignParentTop="true"
-                                android:text="Cidade"
-                                android:textColor="@android:color/white" />
-                        </RelativeLayout>
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_mountains"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_montanha"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="5"
+                        app:layout_constraintStart_toEndOf="@id/img_city"
+                        app:layout_constraintTop_toTopOf="@id/img_city" />
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_mountain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="-2"
+                        android:shadowDy="1"
+                        android:shadowRadius="0.5"
+                        android:text="@string/mountain"
+                        android:textColor="@android:color/white"
+                        app:layout_constraintStart_toStartOf="@id/img_mountains"
+                        app:layout_constraintTop_toTopOf="@id/img_mountains" />
 
-                            <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/img_mountains"
-                                android:layout_width="match_parent"
-                                android:layout_height="100dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/img_montanha" />
-
-                            <androidx.appcompat.widget.AppCompatTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                android:layout_alignParentTop="true"
-                                android:text="Montanha"
-                                android:textColor="@android:color/white" />
-
-                        </RelativeLayout>
-                    </LinearLayout>
-
-                </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
 
@@ -219,7 +217,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:text="Seguinte"
+                android:text="@string/next"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
