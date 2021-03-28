@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margin_betwen_from_itens">8dp</dimen>
+    <dimen name="title1_size">20sp</dimen>
+    <dimen name="title2_size">16sp</dimen>
+    <dimen name="small_size">14sp</dimen>
 </resources>
