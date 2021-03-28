@@ -12,8 +12,12 @@ import br.com.hacksmiles.databinding.FragmentHomeBinding
 import br.com.hacksmiles.ui.DataBindingAdapter
 import br.com.hacksmiles.ui.MainActivity
 
+
 class HomeFragment : Fragment() {
 
+    companion object{
+        open var showRecyclerView: Boolean = false
+    }
     lateinit var binding: FragmentHomeBinding
     lateinit var viewModel: HomeViewModel
     private val adapter by lazy {
@@ -43,7 +47,6 @@ class HomeFragment : Fragment() {
         viewModel.viewState.plannedTrips.observe(viewLifecycleOwner) {
             adapter.setData(it)
         }
-
         viewModel.fetchData()
     }
 
@@ -65,10 +68,15 @@ class HomeFragment : Fragment() {
     }
 
     private fun FragmentHomeBinding.setupRecyclerView() {
-        rvHome.layoutManager = LinearLayoutManager(
-            requireContext(),
-            LinearLayoutManager.VERTICAL,
-            false
-        )
+        if (showRecyclerView) {
+            rvHome.layoutManager = LinearLayoutManager(
+                requireContext(),
+                LinearLayoutManager.VERTICAL,
+                false
+            )
+            rvHome.visibility = View.VISIBLE
+        } else {
+            rvHome.visibility = View.GONE
+        }
     }
 }

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import br.com.hacksmiles.R
 import br.com.hacksmiles.databinding.FragmentSixthBinding
+import br.com.hacksmiles.ui.home.HomeFragment
 
 class SixthFragment : Fragment() {
     lateinit var binding: FragmentSixthBinding
@@ -24,6 +25,7 @@ class SixthFragment : Fragment() {
 
     private fun FragmentSixthBinding.setupView() {
         btnGoHome.setOnClickListener {
+            HomeFragment.showRecyclerView = true
             findNavController().navigate(SixthFragmentDirections.actionSixthFragmentToHomeFragment())
         }
     }
