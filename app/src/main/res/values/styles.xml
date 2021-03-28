@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.Fab_Bottom_app_bar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/smiles_orange</item>
+        <item name="colorPrimaryVariant">@color/smiles_purple</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+</resources>
