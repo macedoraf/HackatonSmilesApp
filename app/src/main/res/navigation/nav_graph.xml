@@ -17,7 +17,11 @@
     <fragment
         android:id="@+id/secondFormFragment"
         android:name="br.com.hacksmiles.ui.seoncscreen.SecondFormFragment"
-        android:label="SecondFormFragment" />
+        android:label="SecondFormFragment" >
+        <action
+            android:id="@+id/action_secondFormFragment_to_thirdFromFragment"
+            app:destination="@id/thirdFromFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="br.com.hacksmiles.ui.home.HomeFragment"
@@ -37,4 +41,8 @@
             android:id="@+id/action_profileFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/thirdFromFragment"
+        android:name="br.com.hacksmiles.ui.thridscreen.ThirdFromFragment"
+        android:label="ThirdFromFragment" />
 </navigation>

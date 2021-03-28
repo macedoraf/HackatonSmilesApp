@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -16,7 +17,6 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-
             android:id="@+id/cl_form_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -27,8 +27,11 @@
                 android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:text="@string/vamos_planificar_a_sua_viagem"
+                android:textColor="@color/black"
                 android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -39,25 +42,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_title">
 
                 <TextView
                     android:id="@+id/tv_how_many_people"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/quantas_pessoas" />
+                    android:text="@string/quantas_pessoas"
+                    android:textAppearance="@style/DefaultTextView.Small" />
 
                 <Spinner
                     android:id="@+id/sp_how_many_people"
-                    android:layout_width="match_parent"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_betwen_from_itens" />
-
-                <TextView
-                    android:id="@+id/tv_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/nome" />
+                    android:layout_marginTop="@dimen/margin_betwen_from_itens"
+                    tools:listitem="@layout/layout_spinner" />
 
                 <EditText
                     android:id="@+id/et_name"
@@ -66,31 +67,33 @@
                     android:layout_marginTop="@dimen/margin_betwen_from_itens"
                     android:hint="@string/nome"
                     android:importantForAutofill="no"
-                    android:inputType="text" />
-
-                <TextView
-                    android:id="@+id/tv_birth_day"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_betwen_from_itens"
-                    android:text="@string/data_nascimento" />
+                    android:inputType="text"
+                    android:textAppearance="@style/DefaultTextView.Small"
+                    android:textColorHint="@color/black" />
 
                 <EditText
                     android:id="@+id/calendar_birth_day"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_betwen_from_itens"
+                    android:layout_marginBottom="30dp"
                     android:autofillHints="@string/data_nascimento"
                     android:hint="@string/data_nascimento"
-                    android:inputType="date" />
+                    android:inputType="datetime"
+                    android:textAppearance="@style/DefaultTextView.Small"
+                    android:textColorHint="@color/black" />
 
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_climatic_selector"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_betwen_from_itens"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="10dp"
                     android:text="@string/prefer_ncia_clim_tica"
-                    android:textSize="16sp" />
+                    android:textAppearance="@style/DefaultTextView.Large"
+                    android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -120,12 +123,15 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginStart="2dp"
+                        android:padding="5dp"
                         android:shadowColor="@color/black"
                         android:shadowDx="-2"
                         android:shadowDy="1"
-                        android:shadowRadius="0.5"
+                        android:shadowRadius="5"
                         android:text="@string/beach"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="@id/img_beach"
                         app:layout_constraintTop_toTopOf="@id/img_beach" />
 
@@ -146,12 +152,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="2dp"
+                        android:padding="5dp"
                         android:shadowColor="@color/black"
                         android:shadowDx="-2"
                         android:shadowDy="1"
-                        android:shadowRadius="0.5"
+                        android:shadowRadius="5"
                         android:text="@string/snow"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="@id/img_snow"
                         app:layout_constraintTop_toTopOf="@id/img_snow" />
 
@@ -173,16 +182,20 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="2dp"
+                        android:padding="5dp"
                         android:shadowColor="@color/black"
                         android:shadowDx="-2"
                         android:shadowDy="1"
-                        android:shadowRadius="0.5"
+                        android:shadowRadius="5"
                         android:text="@string/city"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="@id/img_city"
                         app:layout_constraintTop_toTopOf="@id/img_city" />
 
                     <androidx.appcompat.widget.AppCompatImageView
+
                         android:id="@+id/img_mountains"
                         android:layout_width="0dp"
                         android:layout_height="100dp"
@@ -199,12 +212,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="2dp"
+                        android:padding="5dp"
                         android:shadowColor="@color/black"
                         android:shadowDx="-2"
                         android:shadowDy="1"
-                        android:shadowRadius="0.5"
+                        android:shadowRadius="5"
                         android:text="@string/mountain"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="@id/img_mountains"
                         app:layout_constraintTop_toTopOf="@id/img_mountains" />
 

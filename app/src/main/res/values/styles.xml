@@ -6,4 +6,24 @@
         <item name="colorPrimaryVariant">@color/smiles_purple</item>
         <item name="colorOnPrimary">@color/white</item>
     </style>
+
+
+    <style name="DefaultTextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/black</item>
+    </style>
+
+    <style name="DefaultTextView.Small" parent="DefaultTextView">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="DefaultTextView.Medium" parent="DefaultTextView">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="DefaultTextView.Large" parent="DefaultTextView">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+
 </resources>

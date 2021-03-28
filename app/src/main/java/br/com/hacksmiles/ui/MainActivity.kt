@@ -5,10 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.NavController
-import androidx.navigation.NavHostController
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
+import androidx.navigation.*
 import br.com.hacksmiles.R
 import br.com.hacksmiles.databinding.ActivityMainBinding
 import br.com.hacksmiles.ui.home.HomeFragmentDirections
@@ -37,12 +34,14 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.home -> {
                     findNavController(R.id.nav_host_fragment).navigate(
-                        ProfileFragmentDirections.actionProfileFragmentToHomeFragment()
+                        ProfileFragmentDirections.actionProfileFragmentToHomeFragment(),
+                        NavOptions.Builder().setPopUpTo(R.id.profileFragment, true).build()
                     )
                 }
                 R.id.profile -> {
                     findNavController(R.id.nav_host_fragment).navigate(
-                        HomeFragmentDirections.actionHomeFragmentToProfileFragment()
+                        HomeFragmentDirections.actionHomeFragmentToProfileFragment(),
+                        NavOptions.Builder().setPopUpTo(R.id.homeFragment, true).build()
                     )
                 }
             }
