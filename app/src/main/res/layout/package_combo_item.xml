@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RadioButton
+        android:id="@+id/rb_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voo + Hospedagem no Hotel Sheraton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_hotel"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rb_item_title"
+        android:scaleType="fitXY"
+        android:src="@drawable/img_calor"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_long_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/DefaultTextView.Small"
+        app:layout_constraintStart_toEndOf="@id/iv_hotel"
+        app:layout_constraintTop_toTopOf="@id/iv_hotel"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="2dp"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintBottom_toTopOf="@id/value_money"
+        android:text="Inclui quarto para 2 pessoas e café da manhã"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/value_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/DefaultTextView.Small"
+        app:layout_constraintStart_toEndOf="@id/iv_hotel"
+        app:layout_constraintBottom_toTopOf="@id/or"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="2dp"
+        android:textColor="@color/smiles_orange"
+        android:text="+ R$600 por dia"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/DefaultTextView.Small"
+        app:layout_constraintStart_toStartOf="@id/value_miles"
+        app:layout_constraintBottom_toTopOf="@id/value_miles"
+        app:layout_constraintEnd_toEndOf="@id/value_miles"
+        android:layout_margin="2dp"
+        android:text="ou"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/value_miles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/DefaultTextView.Small"
+        app:layout_constraintStart_toEndOf="@id/iv_hotel"
+        app:layout_constraintTop_toTopOf="@id/ratingBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/ratingBar"
+        android:layout_margin="2dp"
+        android:textColor="@color/smiles_orange"
+        android:text="+ R$15000 por dia"/>
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="239dp"
+        android:layout_height="42dp"
+        android:numStars="5"
+        android:rating="4"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:stepSize="1"
+        app:layout_constraintEnd_toEndOf="@id/iv_hotel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_hotel" />
+</androidx.constraintlayout.widget.ConstraintLayout>
