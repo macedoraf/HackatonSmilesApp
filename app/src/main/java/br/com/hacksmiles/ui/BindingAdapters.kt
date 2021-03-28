@@ -18,6 +18,13 @@ fun <T> setRecyclerViewProperties(recyclerView: RecyclerView, data: List<T>) {
     }
 }
 
+@BindingAdapter("srcResInt")
+fun <T> AppCompatImageView.setSourceResInt(@DrawableRes image: Int) {
+    ContextCompat.getDrawable(context, image)?.run {
+        setImageDrawable(this)
+    }
+}
+
 @BindingAdapter("srcRes")
 fun <T> AppCompatImageView.setSrcResource(image: String) {
     val res = when (image) {

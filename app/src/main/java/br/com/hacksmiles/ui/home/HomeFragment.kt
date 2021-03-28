@@ -16,7 +16,12 @@ class HomeFragment : Fragment() {
 
     lateinit var binding: FragmentHomeBinding
     lateinit var viewModel: HomeViewModel
-    val adapter by lazy {  }
+    private val adapter by lazy {
+        object : DataBindingAdapter() {
+            override var onClick: ((position: Int) -> Unit)? = ::navigateToDetailScreen
+            override fun getLayoutId(): Int = R.layout.trip_progress_item
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +40,10 @@ class HomeFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        viewModel.viewState.plannedTrips.observe(viewLifecycleOwner) {
+            adapter.setData(it)
+        }
+
         viewModel.fetchData()
     }
 
@@ -45,13 +54,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun FragmentHomeBinding.setupAdapter() {
-        rvHome.adapter = object : DataBindingAdapter(){
-            override var onClick: ((position: Int) -> Unit)? = ::navigateToDetailScreen
-            override fun getLayoutId(): Int = R.layout.trip_progress_item
-        }
+        rvHome.adapter = adapter
     }
 
-    private fun navigateToDetailScreen(position: Int){
+    private fun navigateToDetailScreen(position: Int) {
         viewModel.viewState.plannedTrips.value?.get(position)
         findNavController().navigate(
             HomeFragmentDirections.actionHomeFragmentToTripDetailFragment()
