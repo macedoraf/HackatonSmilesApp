@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/form1Fragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/form1Fragment"
         android:name="br.com.hacksmiles.ui.firstscreen.FirstFormFragment"
         android:label="Form1Fragment"
-        tools:layout="@layout/fragment_form1" >
+        tools:layout="@layout/fragment_form1">
         <action
             android:id="@+id/action_form1Fragment_to_secondFormFragment"
             app:destination="@id/secondFormFragment" />
@@ -18,4 +18,12 @@
         android:id="@+id/secondFormFragment"
         android:name="br.com.hacksmiles.ui.seoncscreen.SecondFormFragment"
         android:label="SecondFormFragment" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="br.com.hacksmiles.ui.home.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_form1Fragment"
+            app:destination="@id/form1Fragment" />
+    </fragment>
 </navigation>
