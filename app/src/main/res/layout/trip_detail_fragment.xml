@@ -1,37 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_marginHorizontal="20dp">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/detail_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Cancun - 25 de Março de 2022"/>
+        tools:text="Cancun - 25 de Março de 2022" />
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:layout_marginTop="20dp"
         android:id="@+id/detail_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/detail_title"
         android:scaleType="fitCenter"
-        tools:src="@drawable/common_google_signin_btn_icon_light_focused"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_title"
+        tools:src="@drawable/common_google_signin_btn_icon_light_focused" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/progress"
+        android:id="@+id/progress_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Progresso: "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detail_image"
-        tools:text="Progresso:"/>
+        tools:text="Progresso: 66%" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@id/progress_text"
+        app:layout_constraintTop_toTopOf="@id/progress_text" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_need_add_money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_text"
+        tools:text="Neste mes você precisa adicionar R$ 50 amais para manter o planejamento atual"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_need_add_money_disclaimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_need_add_money"
+        tools:text="*Se não conseguir bater a meta desse mes, o sistema va recalcular o monto que precisa adicinaor por mes para cumplir o seu objectivo"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_requirements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Requerimentos da sua viagem"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_need_add_money_disclaimer" />
+
+<!--    Nesse recyclerViews va ter checkboxes-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_checkboxes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_requirements"
+        app:layout_constraintHorizontal_bias="0"
+        tools:listitem="@android:layout/simple_list_item_checked"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
