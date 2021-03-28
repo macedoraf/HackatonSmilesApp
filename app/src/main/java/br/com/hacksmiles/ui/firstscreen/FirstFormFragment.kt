@@ -27,29 +27,12 @@ class FirstFormFragment : Fragment() {
         )
     }
 
-    private val musicAdapter: ArrayAdapter<String> by lazy {
-        ArrayAdapter(
-            this.requireContext(),
-            R.layout.layout_spinner,
-            viewModel.viewState.musicList
-        )
-    }
 
     private val climateAdapter: ClimateAdapter by lazy { ClimateAdapter() }
 
     private val howManyListener = object : AdapterView.OnItemSelectedListener {
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-            //TODO
-        }
-
-        override fun onNothingSelected(parent: AdapterView<*>?) {
-            //TODO
-        }
-    }
-
-    private val musicalListener = object : AdapterView.OnItemSelectedListener {
-        override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-            //TODO
+            viewModel.viewState.howMany = viewModel.viewState.howManyList[position].toInt()
         }
 
         override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -76,11 +59,22 @@ class FirstFormFragment : Fragment() {
 
     private fun FragmentForm1Binding.setupView() {
         this.viewState = viewModel.viewState
-        this.spMusicTaste.setup(musicAdapter, musicalListener)
         this.spHowManyPeople.setup(howManyAdapter, howManyListener)
-        this.rvClimaticSelector.setup()
-        this.btNext.setOnClickListener {
-            findNavController().navigate(FirstFormFragmentDirections.actionForm1FragmentToSecondFormFragment())
+        setOnClickListeners()
+    }
+
+    private fun FragmentForm1Binding.setOnClickListeners() {
+        imgSnow.setOnClickListener { selectPreference("Neve") }
+        imgBeach.setOnClickListener { selectPreference("Praia") }
+        imgCity.setOnClickListener { selectPreference("Cidade") }
+        imgMountains.setOnClickListener { selectPreference("Montanha") }
+
+        btNext.setOnClickListener {
+            viewModel.viewState.name = etName.text.toString()
+            viewModel.viewState.birthdayDate = calendarBirthDay.text.toString()
+            if (viewModel.validateForm()) {
+                findNavController().navigate(FirstFormFragmentDirections.actionForm1FragmentToSecondFormFragment())
+            }
         }
     }
 
@@ -90,6 +84,10 @@ class FirstFormFragment : Fragment() {
     ) {
         this.adapter = adapter
         this.onItemSelectedListener = listener
+    }
+
+    private fun selectPreference(tag: String) {
+        viewModel.viewState.selectedClimate = tag
     }
 
     private fun RecyclerView.setup() {

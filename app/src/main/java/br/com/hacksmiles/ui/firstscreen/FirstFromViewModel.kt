@@ -13,4 +13,11 @@ class FirstFromViewModel : ViewModel() {
             ClimateItem(image = R.drawable.img_frio)
         )
     }
+
+    fun validateForm(): Boolean {
+        return viewState.howMany > 0
+                && viewState.birthdayDate.isNotBlank()
+                && viewState.name.isNotBlank()
+                && viewState.selectedClimate.isNotBlank()
+    }
 }

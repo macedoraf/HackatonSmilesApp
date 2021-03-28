@@ -24,14 +24,6 @@ class SecondFormFragment : Fragment() {
         )
     }
 
-    private val musicAdapter: ArrayAdapter<String> by lazy {
-        ArrayAdapter(
-            this.requireContext(),
-            R.layout.layout_spinner,
-            viewModel.viewState.musicList
-        )
-    }
-
     private val howManyListener = object : AdapterView.OnItemSelectedListener {
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
             //TODO
