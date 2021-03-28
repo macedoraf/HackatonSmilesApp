@@ -14,10 +14,15 @@ class FourthFragment : Fragment() {
     lateinit var binding: FragmentFourthBinding
 
 
+    private val args = navArgs<FourthFragmentArgs>()
+
     private val viewModel = FourthViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        args.value.destiny.run {
+            viewModel.viewState.destiny.value = this
+        }
     }
 
 
@@ -34,6 +39,7 @@ class FourthFragment : Fragment() {
 
     private fun FragmentFourthBinding.setupView() {
         this.viewState = viewModel.viewState
+        btnNext.setOnClickListener { findNavController().navigate(FourthFragmentDirections.actionFourthFragmentToSixthFragment2()) }
 
     }
 }
