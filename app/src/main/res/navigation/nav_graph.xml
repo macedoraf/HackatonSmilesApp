@@ -85,9 +85,12 @@
             app:argType="br.com.hacksmiles.data.model.Destiny"
             app:nullable="false" />
 
+<!--        <action-->
+<!--            android:id="@+id/action_fourthFragment_to_fifthFragment"-->
+<!--            app:destination="@id/fifthFragment" />-->
         <action
-            android:id="@+id/action_fourthFragment_to_fifthFragment"
-            app:destination="@id/fifthFragment" />
+            android:id="@+id/action_fourthFragment_to_sixthFragment"
+            app:destination="@id/sixthFragment" />
     </fragment>
     <fragment
         android:id="@+id/fifthFragment"

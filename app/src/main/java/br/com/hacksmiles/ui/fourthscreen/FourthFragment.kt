@@ -38,6 +38,6 @@ class FourthFragment : Fragment() {
 
     private fun FragmentFourthBinding.setupView() {
         this.viewState = viewModel.viewState
-        btnNext.setOnClickListener { findNavController().navigate(FourthFragmentDirections.actionFourthFragmentToFifthFragment()) }
+        btnNext.setOnClickListener { findNavController().navigate(FourthFragmentDirections.actionFourthFragmentToSixthFragment()) }
     }
 }

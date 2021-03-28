@@ -59,7 +59,7 @@
                 android:id="@+id/rb_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hibrido: R$ 1.000 + 15.000 milhas" />
+                android:text="Hibrido: R$ 2.000 + 26.908 milhas" />
         </RadioGroup>
 
         <androidx.appcompat.widget.AppCompatTextView
