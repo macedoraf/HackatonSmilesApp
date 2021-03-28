@@ -25,8 +25,5 @@ class FifthFragment : Fragment() {
     }
 
     private fun FragmentFifthBinding.setupView() {
-        btNext.setOnClickListener {
-            findNavController().navigate(FifthFragmentDirections.actionFifthFragmentToSixthFragment())
-        }
     }
 }

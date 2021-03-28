@@ -76,7 +76,6 @@ class FirstFormFragment : Fragment() {
     }
 
     private fun FragmentForm1Binding.setOnClickListeners() {
-        tvSelecionarPeriodo.setOnClickListener { showDialog() }
         imgSnow.setOnClickListener {
             resetAllSelected()
             selectPreference("Neve")
@@ -97,6 +96,21 @@ class FirstFormFragment : Fragment() {
             resetAllSelected()
             setBorder(binding.imgMountains)
             selectPreference("Montanha")
+        }
+
+        btSelectDate.setOnClickListener {
+            val dateRangePicker =
+                MaterialDatePicker.Builder.dateRangePicker()
+                    .setTitleText("Selecionar datas das ferias")
+                    .setSelection(
+                        androidx.core.util.Pair(
+                            MaterialDatePicker.thisMonthInUtcMilliseconds(),
+                            MaterialDatePicker.todayInUtcMilliseconds()
+                        )
+                    )
+                    .build()
+
+            dateRangePicker.show(requireActivity().supportFragmentManager, "")
         }
 
         btNext.setOnClickListener {
@@ -146,7 +160,7 @@ class FirstFormFragment : Fragment() {
                 )
                 .build().apply {
                     addOnPositiveButtonClickListener {
-                        binding.tvSelecionarPeriodo.text = "Periodo selecionado!"
+
                     }
                 }
 

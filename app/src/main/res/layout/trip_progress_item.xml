@@ -26,7 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0"
-            tools:text="Cancun - 25 de Março de 2022" />
+            tools:text="Porto de Galhinas - 25 de Março de 2022" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/trip_item_image"
@@ -34,6 +34,7 @@
             android:layout_width="200dp"
             android:layout_height="150dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,6 +47,7 @@
             android:id="@+id/progress_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:text="@{obj.progressFormatted}"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,6 +59,7 @@
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:progress="@{obj.progress}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
@@ -75,6 +78,7 @@
             android:id="@+id/item_description"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginStart="5dp"
             android:text="@{obj.stillMissingDescription}"
             app:layout_constraintBottom_toBottomOf="@id/trip_item_image"
             app:layout_constraintEnd_toEndOf="parent"

@@ -32,12 +32,12 @@ class Repository(private val service: AppService) {
 
     fun fetchHomeCards(): List<HomeViewState.TripProgressItem>{
         return listOf(HomeViewState.TripProgressItem(
-            "Cancun - 25 de Março de 2022",
+            "Porto de Galhinas - 25 de Março de 2022",
                 R.drawable.porto_de_galinhas,
-            66,
-            "66%",
-            "R$ 1800",
-            "-Passaporte\n-Mascara"
+            33,
+            "33%",
+            "45000 milhas",
+            "-Passaporte"
         ))
     }
 }

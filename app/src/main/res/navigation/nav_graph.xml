@@ -67,19 +67,10 @@
             android:name="destiny"
             app:argType="br.com.hacksmiles.data.model.Destiny"
             app:nullable="false" />
-
         <action
-            android:id="@+id/action_fourthFragment_to_fifthFragment"
-            app:destination="@id/fifthFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/fifthFragment"
-        android:name="br.com.hacksmiles.ui.fifthscreen.FifthFragment"
-        android:label="fragment_fifth"
-        tools:layout="@layout/fragment_fifth" >
-        <action
-            android:id="@+id/action_fifthFragment_to_sixthFragment"
+            android:id="@+id/action_fourthFragment_to_sixthFragment2"
             app:destination="@id/sixthFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/sixthFragment"

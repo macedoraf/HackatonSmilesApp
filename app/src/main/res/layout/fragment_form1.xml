@@ -38,6 +38,7 @@
 
 
             <LinearLayout
+                android:id="@+id/ll_first_screen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -83,13 +84,6 @@
                     android:textAppearance="@style/DefaultTextView.Small"
                     android:textColorHint="@color/black" />
 
-                <TextView
-                    android:id="@+id/tv_selecionar_periodo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:text="Clique aqui para selecionar o periodo!"
-                    android:textStyle="bold" />
 
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -235,14 +229,36 @@
 
             </LinearLayout>
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/when_to_go"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="2dp"
+                android:gravity="center_vertical"
+                android:text="Quando são suas ferias?"
+                app:layout_constraintBottom_toBottomOf="@id/bt_select_date"
+                app:layout_constraintEnd_toStartOf="@+id/bt_select_date"
+                app:layout_constraintStart_toStartOf="@+id/ll_first_screen"
+                app:layout_constraintTop_toTopOf="@+id/bt_select_date" />
+
+            <Button
+                android:id="@+id/bt_select_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="28dp"
+                android:text="Selecionar datas"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_first_screen" />
+
             <Button
                 android:id="@+id/bt_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:text="@string/next"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bt_select_date" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
