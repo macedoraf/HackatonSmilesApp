@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HackSmiles</string>
+    <string name="app_name">TriPlanner</string>
     <string name="vamos_planificar_a_sua_viagem">Vamos planificar a sua viagem?</string>
     <string name="quantas_pessoas">Quantas pessoas?</string>
     <string name="data_nascimento">Data nascimento</string>

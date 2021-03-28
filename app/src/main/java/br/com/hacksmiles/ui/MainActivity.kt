@@ -1,6 +1,7 @@
 package br.com.hacksmiles.ui
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
@@ -22,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.setupView()
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.title = getString(R.string.app_name)
     }
 
     override fun onStart() {
@@ -50,6 +53,9 @@ class MainActivity : AppCompatActivity() {
         findNavController(R.id.nav_host_fragment).addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.homeFragment -> {
+                    supportActionBar?.setDisplayHomeAsUpEnabled(false)
+                    supportActionBar?.setDisplayShowHomeEnabled(false)
+                    supportActionBar?.setDisplayShowTitleEnabled(true)
                     bottomNavigationView.menu[0].isEnabled = false
                     bottomNavigationView.menu[2].isEnabled = true
                     bottomNavigationView.background = null
@@ -58,6 +64,9 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.profileFragment -> {
+                    supportActionBar?.setDisplayHomeAsUpEnabled(false)
+                    supportActionBar?.setDisplayShowHomeEnabled(false)
+                    supportActionBar?.setDisplayShowTitleEnabled(true)
                     bottomNavigationView.menu[0].isEnabled = true
                     bottomNavigationView.menu[2].isEnabled = false
                     bottomNavigationView.background = null
@@ -65,6 +74,9 @@ class MainActivity : AppCompatActivity() {
                     fab.visibility = View.GONE
                 }
                 else -> {
+                    supportActionBar?.setDisplayHomeAsUpEnabled(true)
+                    supportActionBar?.setDisplayShowHomeEnabled(true)
+                    supportActionBar?.setDisplayShowTitleEnabled(false)
                     bottomAppBar.visibility = View.GONE
                     fab.visibility = View.GONE
                 }
@@ -78,6 +90,14 @@ class MainActivity : AppCompatActivity() {
                 HomeFragmentDirections.actionHomeFragmentToForm1Fragment()
             )
         }
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+            }
+        }
+        return true
     }
 }
