@@ -11,6 +11,8 @@ import br.com.hacksmiles.BR
 abstract class DataBindingAdapter(private val entries: MutableList<Any> = mutableListOf()) :
     RecyclerView.Adapter<DataBindingAdapter.BindingViewHolder>(), BindableAdapter<Any> {
 
+    abstract var onClick: ((position: Int) -> Unit)?
+
     abstract fun getLayoutId(): Int
 
     private fun getObject(position: Int): Any {
@@ -21,6 +23,7 @@ abstract class DataBindingAdapter(private val entries: MutableList<Any> = mutabl
 
     override fun onBindViewHolder(holder: BindingViewHolder, position: Int) {
         holder.bind(getObject(position))
+        holder.itemView.setOnClickListener { onClick?.invoke(position) }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BindingViewHolder {

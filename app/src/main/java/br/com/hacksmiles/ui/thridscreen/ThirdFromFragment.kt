@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.hacksmiles.R
 import br.com.hacksmiles.databinding.FragmentThirdFormBinding
@@ -47,8 +48,14 @@ class ThirdFromFragment : Fragment() {
 
     private fun FragmentThirdFormBinding.setupAdapter() {
         rvDestinies.adapter = object : DataBindingAdapter() {
+            override var onClick: ((position: Int) -> Unit)? = ::navigateToFourthScreen
             override fun getLayoutId(): Int = R.layout.layout_destiny_item
         }
+    }
+
+    private fun navigateToFourthScreen(position: Int) {
+        viewModel.viewState.destinies.value?.get(position)
+        findNavController().navigate(ThirdFromFragmentDirections.actionThirdFromFragmentToFourthFragment())
     }
 
     override fun onStart() {
