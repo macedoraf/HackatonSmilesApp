@@ -9,11 +9,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.hacksmiles.R
 import br.com.hacksmiles.databinding.FragmentThirdFormBinding
 import br.com.hacksmiles.ui.DataBindingAdapter
+import br.com.hacksmiles.ui.MainActivity
 
 class ThirdFromFragment : Fragment() {
 
     lateinit var binding: FragmentThirdFormBinding
-    val viewState = ThirdFromViewState()
+    lateinit var viewModel: ThirdFromViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ThirdFromViewModel((activity as MainActivity).repository)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,20 +32,27 @@ class ThirdFromFragment : Fragment() {
     }
 
     private fun FragmentThirdFormBinding.setupView() {
+        setupRecyclerView()
+        setupAdapter()
+        this.viewState = viewModel.viewState
+    }
+
+    private fun FragmentThirdFormBinding.setupRecyclerView() {
         rvDestinies.layoutManager = LinearLayoutManager(
             requireContext(),
             LinearLayoutManager.VERTICAL,
             false
         )
+    }
+
+    private fun FragmentThirdFormBinding.setupAdapter() {
         rvDestinies.adapter = object : DataBindingAdapter() {
             override fun getLayoutId(): Int = R.layout.layout_destiny_item
         }
-
-        this.viewState = this@ThirdFromFragment.viewState
     }
 
     override fun onStart() {
         super.onStart()
-        viewState.destinies.value = listOf(0, 0, 0, 0, 0)
+        viewModel.fetchData()
     }
 }

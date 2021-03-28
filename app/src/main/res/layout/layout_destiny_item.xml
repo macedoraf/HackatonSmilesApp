@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="obj"
-            type="Integer" />
+            type="br.com.hacksmiles.ui.thridscreen.ThirdFromViewState.DestinyCardUI" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -20,7 +20,6 @@
             app:cardCornerRadius="5dp"
             app:cardElevation="1dp"
             app:cardPreventCornerOverlap="true"
-
             app:cardUseCompatPadding="true">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,7 +31,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/corcovado"
+                    tools:src="@drawable/corcovado"
+                    srcRes="@{obj.resImage}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,7 @@
                     android:id="@+id/filter_one"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:alpha="0.1"
+                    android:alpha="0.8"
                     android:background="@color/white"
                     app:layout_constraintBottom_toBottomOf="@id/tv_milhas"
                     app:layout_constraintEnd_toEndOf="@id/tv_milhas"
@@ -60,18 +60,19 @@
                     android:shadowDx="-2"
                     android:shadowDy="1"
                     android:shadowRadius="5"
-                    android:text="50.000 milhas"
+                    android:text="@{obj.smilesValue}"
                     android:textAppearance="@style/DefaultTextView.Medium"
                     android:textColor="@color/smiles_orange"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@id/img_destiny"
-                    app:layout_constraintEnd_toEndOf="@id/img_destiny" />
+                    app:layout_constraintEnd_toEndOf="@id/img_destiny"
+                    tools:text="50.000 milhas" />
 
                 <View
                     android:id="@+id/filter_two"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:alpha="0.1"
+                    android:alpha="0.8"
                     android:background="@color/white"
                     app:layout_constraintBottom_toBottomOf="@id/tv_money"
                     app:layout_constraintEnd_toEndOf="@id/tv_money"
@@ -89,15 +90,16 @@
                     android:shadowDx="-2"
                     android:shadowDy="1"
                     android:shadowRadius="5"
-                    android:text="R$ 2.000,00"
+                    android:text="@{obj.moneyValue}"
                     android:textAppearance="@style/DefaultTextView.Medium"
-                    android:textColor="@color/white"
+                    android:textColor="@android:color/holo_green_light"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@id/img_destiny"
-                    app:layout_constraintEnd_toStartOf="@+id/filter_one" />
+                    app:layout_constraintEnd_toStartOf="@+id/filter_one"
+                    tools:text="R$ 2.000,00" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/textView"
+                    android:id="@+id/tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -107,12 +109,12 @@
                     android:shadowDx="-2"
                     android:shadowDy="1"
                     android:shadowRadius="5"
-                    android:text="Morro do corcovado (Rio de Janeiro)"
+                    android:text="@{obj.title}"
                     android:textColor="@color/white"
-
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Morro do corcovado" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>

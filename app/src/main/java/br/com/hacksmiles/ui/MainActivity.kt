@@ -8,6 +8,7 @@ import androidx.core.view.get
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.*
 import br.com.hacksmiles.R
+import br.com.hacksmiles.data.Repository
 import br.com.hacksmiles.databinding.ActivityMainBinding
 import br.com.hacksmiles.ui.home.HomeFragmentDirections
 import br.com.hacksmiles.ui.profile.ProfileFragmentDirections
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
 
+    lateinit var repository: Repository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding.setupView()
         setSupportActionBar(binding.toolbar)
         supportActionBar?.title = getString(R.string.app_name)
+        repository = Repository()
     }
 
     override fun onStart() {

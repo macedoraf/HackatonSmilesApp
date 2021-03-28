@@ -99,8 +99,13 @@ class FirstFormFragment : Fragment() {
         btNext.setOnClickListener {
             viewModel.viewState.name = etName.text.toString()
             viewModel.viewState.birthdayDate = calendarBirthDay.text.toString()
-            if (viewModel.validateForm()) {
-                findNavController().navigate(FirstFormFragmentDirections.actionForm1FragmentToSecondFormFragment())
+            val result = viewModel.validateForm()
+            if (result.first) {
+                findNavController().navigate(
+                    FirstFormFragmentDirections.actionForm1FragmentToSecondFormFragment(
+                        result.second
+                    )
+                )
             } else {
                 Snackbar.make(
                     this.root,

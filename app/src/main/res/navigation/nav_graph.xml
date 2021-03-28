@@ -17,7 +17,13 @@
     <fragment
         android:id="@+id/secondFormFragment"
         android:name="br.com.hacksmiles.ui.secondscreen.SecondFormFragment"
-        android:label="SecondFormFragment" >
+        android:label="SecondFormFragment"
+        tools:layout="@layout/fragment_second_form">
+
+        <argument
+            android:name="userData"
+            app:argType="br.com.hacksmiles.data.FormUserData"
+            app:nullable="false" />
         <action
             android:id="@+id/action_secondFormFragment_to_thirdFromFragment"
             app:destination="@id/thirdFromFragment" />
@@ -25,7 +31,8 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="br.com.hacksmiles.ui.home.HomeFragment"
-        android:label="HomeFragment">
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_form1Fragment"
             app:destination="@id/form1Fragment" />
@@ -36,7 +43,8 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="br.com.hacksmiles.ui.profile.ProfileFragment"
-        android:label="ProfileFragment" >
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/action_profileFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -44,7 +52,14 @@
     <fragment
         android:id="@+id/thirdFromFragment"
         android:name="br.com.hacksmiles.ui.thridscreen.ThirdFromFragment"
-        android:label="ThirdFromFragment" >
+        android:label="ThirdFromFragment"
+        tools:layout="@layout/fragment_third_form">
+
+        <argument
+            android:name="FormUserData"
+            app:argType="br.com.hacksmiles.data.FormUserData"
+            app:nullable="false" />
+
         <action
             android:id="@+id/action_thirdFromFragment_to_fourthFragment"
             app:destination="@id/fourthFragment" />
@@ -53,7 +68,7 @@
         android:id="@+id/fourthFragment"
         android:name="br.com.hacksmiles.ui.fourthscreen.FourthFragment"
         android:label="fragment_fourth"
-        tools:layout="@layout/fragment_fourth" >
+        tools:layout="@layout/fragment_fourth">
         <action
             android:id="@+id/action_fourthFragment_to_fifthFragment"
             app:destination="@id/fifthFragment" />
