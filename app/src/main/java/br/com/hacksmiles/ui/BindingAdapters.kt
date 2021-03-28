@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import br.com.hacksmiles.R
 
 interface BindableAdapter<T> {
     fun setData(data: List<T>)
@@ -18,7 +19,16 @@ fun <T> setRecyclerViewProperties(recyclerView: RecyclerView, data: List<T>) {
 }
 
 @BindingAdapter("srcRes")
-fun <T> AppCompatImageView.setSrcResource(@DrawableRes res: Int) {
+fun <T> AppCompatImageView.setSrcResource(image: String) {
+    val res = when (image) {
+        "himalaia" -> R.drawable.himalaia
+        "riodejaneiro" -> R.drawable.corcovado
+        "miami" -> R.drawable.miami
+        "toronto" -> R.drawable.toronto
+        "drakensberg" -> R.drawable.drakensberg
+        "portogalinhas" -> R.drawable.porto_de_galinhas
+        else -> R.drawable.sem_imagem
+    }
     ContextCompat.getDrawable(this.context, res).run {
         setImageDrawable(this)
     }

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.hacksmiles.R
 import br.com.hacksmiles.databinding.FragmentThirdFormBinding
@@ -16,6 +17,13 @@ class ThirdFromFragment : Fragment() {
 
     lateinit var binding: FragmentThirdFormBinding
     lateinit var viewModel: ThirdFromViewModel
+    private val args by navArgs<ThirdFromFragmentArgs>()
+    private val adapter by lazy {
+        object : DataBindingAdapter() {
+            override var onClick: ((position: Int) -> Unit)? = ::navigateToFourthScreen
+            override fun getLayoutId(): Int = R.layout.layout_destiny_item
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +44,10 @@ class ThirdFromFragment : Fragment() {
         setupRecyclerView()
         setupAdapter()
         this.viewState = viewModel.viewState
+
+        viewModel.viewState.destinies.observe(viewLifecycleOwner) {
+            adapter.setData(it)
+        }
     }
 
     private fun FragmentThirdFormBinding.setupRecyclerView() {
@@ -47,10 +59,7 @@ class ThirdFromFragment : Fragment() {
     }
 
     private fun FragmentThirdFormBinding.setupAdapter() {
-        rvDestinies.adapter = object : DataBindingAdapter() {
-            override var onClick: ((position: Int) -> Unit)? = ::navigateToFourthScreen
-            override fun getLayoutId(): Int = R.layout.layout_destiny_item
-        }
+        rvDestinies.adapter = adapter
     }
 
     private fun navigateToFourthScreen(position: Int) {
@@ -60,6 +69,7 @@ class ThirdFromFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        viewModel.fetchData()
+        args.userData
+        viewModel.fetchData(args.userData.preferences)
     }
 }

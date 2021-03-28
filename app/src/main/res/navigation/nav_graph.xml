@@ -22,7 +22,7 @@
 
         <argument
             android:name="userData"
-            app:argType="br.com.hacksmiles.data.FormUserData"
+            app:argType="br.com.hacksmiles.data.model.FormUserData"
             app:nullable="false" />
         <action
             android:id="@+id/action_secondFormFragment_to_thirdFromFragment"
@@ -56,8 +56,8 @@
         tools:layout="@layout/fragment_third_form">
 
         <argument
-            android:name="FormUserData"
-            app:argType="br.com.hacksmiles.data.FormUserData"
+            android:name="userData"
+            app:argType="br.com.hacksmiles.data.model.FormUserData"
             app:nullable="false" />
 
         <action

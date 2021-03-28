@@ -1,7 +1,7 @@
 package br.com.hacksmiles.ui.firstscreen
 
 import androidx.lifecycle.ViewModel
-import br.com.hacksmiles.data.FormUserData
+import br.com.hacksmiles.data.model.FormUserData
 
 
 class FirstFromViewModel : ViewModel() {
@@ -18,7 +18,7 @@ class FirstFromViewModel : ViewModel() {
             FormUserData(
                 viewState.name,
                 viewState.birthdayDate,
-                viewState.selectedClimate,
+                viewState.selectedClimate.toLowerCase(),
                 viewState.howMany
             )
         )

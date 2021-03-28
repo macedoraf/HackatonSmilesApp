@@ -45,6 +45,10 @@ dependencies {
     def lifecycle_version = "2.3.1"
     def nav_version = "2.3.4"
 
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
+    implementation group: 'com.squareup.retrofit2', name: 'converter-gson', version: '2.9.0'
     implementation 'com.google.firebase:firebase-database'
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"

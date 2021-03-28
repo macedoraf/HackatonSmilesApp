@@ -9,10 +9,16 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.*
 import br.com.hacksmiles.R
 import br.com.hacksmiles.data.Repository
+import br.com.hacksmiles.data.model.AppService
 import br.com.hacksmiles.databinding.ActivityMainBinding
 import br.com.hacksmiles.ui.home.HomeFragmentDirections
 import br.com.hacksmiles.ui.profile.ProfileFragmentDirections
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +33,18 @@ class MainActivity : AppCompatActivity() {
         binding.setupView()
         setSupportActionBar(binding.toolbar)
         supportActionBar?.title = getString(R.string.app_name)
-        repository = Repository()
+
+        repository = Repository(
+            Retrofit.Builder()
+                .client(
+                    OkHttpClient().newBuilder().addInterceptor(HttpLoggingInterceptor().apply {
+                        level = HttpLoggingInterceptor.Level.BODY
+                    }).build()
+                )
+                .baseUrl("https://apismiles.herokuapp.com/")
+                .addConverterFactory(GsonConverterFactory.create()).build()
+                .create<AppService>()
+        )
     }
 
     override fun onStart() {

@@ -1,7 +1,6 @@
-package br.com.hacksmiles.data
+package br.com.hacksmiles.data.model
 
 import java.io.Serializable
-
 
 data class FormUserData(
     var name: String,
@@ -10,6 +9,4 @@ data class FormUserData(
     var howMany: Int,
     var tripInitialDate: String = "",
     var tripEndDate: String = ""
-) :
-    Serializable {
-}
+) : Serializable {}

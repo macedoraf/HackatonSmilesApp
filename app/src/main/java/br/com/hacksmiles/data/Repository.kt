@@ -1,29 +1,30 @@
 package br.com.hacksmiles.data
 
-import br.com.hacksmiles.R
-import br.com.hacksmiles.ui.thridscreen.ThirdFromViewState
+import android.util.Log
+import br.com.hacksmiles.data.model.AppService
+import br.com.hacksmiles.data.model.Destiny
 
 var nome = "Rafael"
-class Repository {
 
-    fun fetchDestinies(): List<ThirdFromViewState.DestinyCardUI> {
-        return listOf<ThirdFromViewState.DestinyCardUI>(
-            ThirdFromViewState.DestinyCardUI.Builder().build(),
-            ThirdFromViewState.DestinyCardUI.Builder().build(),
-            ThirdFromViewState.DestinyCardUI.Builder().build(),
-            ThirdFromViewState.DestinyCardUI.Builder().build()
+class Repository(private val service: AppService) {
+    val fallback = listOf(
+        Destiny(
+            "Teste", "R$100,00", "100.000 miles", listOf(),
+            listOf(), "himalaia"
         )
-    }
+    )
 
-    private fun provideResource(destiny: String): Int {
-        return when (destiny) {
-            "himalaia" -> R.drawable.himalaia
-            "riodejaneiro" -> R.drawable.corcovado
-            "miami" -> R.drawable.miami
-            "toronto" -> R.drawable.toronto
-            "drakensberg" -> R.drawable.drakensberg
-            "portogalinhas" -> R.drawable.porto_de_galinhas
-            else -> R.drawable.sem_imagem
+    suspend fun fetchDestinies(preference: String): List<Destiny> {
+        try {
+            val response = service.getDestinies(preference).execute()
+            return if (response.isSuccessful) {
+                response.body()?.destinies ?: fallback
+            } else {
+                fallback
+            }
+        } catch (err: Exception) {
+            Log.e("Parrse",err.toString())
+            return fallback
         }
     }
 }
