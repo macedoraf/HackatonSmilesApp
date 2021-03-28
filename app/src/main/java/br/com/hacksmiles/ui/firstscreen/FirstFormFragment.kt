@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import br.com.hacksmiles.R
 import br.com.hacksmiles.data.nome
 import br.com.hacksmiles.databinding.FragmentForm1Binding
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.snackbar.Snackbar
 import java.util.*
 
@@ -75,6 +76,7 @@ class FirstFormFragment : Fragment() {
     }
 
     private fun FragmentForm1Binding.setOnClickListeners() {
+        tvSelecionarPeriodo.setOnClickListener { showDialog() }
         imgSnow.setOnClickListener {
             resetAllSelected()
             selectPreference("Neve")
@@ -104,7 +106,7 @@ class FirstFormFragment : Fragment() {
             val result = viewModel.validateForm()
             if (result.first) {
                 findNavController().navigate(
-                    FirstFormFragmentDirections.actionForm1FragmentToSecondFormFragment(
+                    FirstFormFragmentDirections.actionForm1FragmentToThirdFromFragment(
                         result.second
                     )
                 )
@@ -128,6 +130,27 @@ class FirstFormFragment : Fragment() {
 
     private fun selectPreference(tag: String) {
         viewModel.viewState.selectedClimate = tag
+    }
+
+    private fun showDialog() {
+        val locale: Locale = resources.configuration.locale
+        Locale.setDefault(locale)
+        val dateRangePicker =
+            MaterialDatePicker.Builder.dateRangePicker()
+                .setTitleText("Selecionar datas das ferias")
+                .setSelection(
+                    androidx.core.util.Pair(
+                        MaterialDatePicker.thisMonthInUtcMilliseconds(),
+                        MaterialDatePicker.todayInUtcMilliseconds()
+                    )
+                )
+                .build().apply {
+                    addOnPositiveButtonClickListener {
+                        binding.tvSelecionarPeriodo.text = "Periodo selecionado!"
+                    }
+                }
+
+        dateRangePicker.show(requireActivity().supportFragmentManager, "")
     }
 
 }

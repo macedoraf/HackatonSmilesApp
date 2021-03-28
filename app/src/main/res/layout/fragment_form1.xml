@@ -73,7 +73,6 @@
 
                 <EditText
                     android:id="@+id/calendar_birth_day"
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_betwen_from_itens"
@@ -83,6 +82,14 @@
                     android:inputType="datetime"
                     android:textAppearance="@style/DefaultTextView.Small"
                     android:textColorHint="@color/black" />
+
+                <TextView
+                    android:id="@+id/tv_selecionar_periodo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Clique aqui para selecionar o periodo!"
+                    android:textStyle="bold" />
 
 
                 <androidx.appcompat.widget.AppCompatTextView

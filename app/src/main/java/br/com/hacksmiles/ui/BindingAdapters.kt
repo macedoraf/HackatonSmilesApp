@@ -28,12 +28,13 @@ fun <T> AppCompatImageView.setSourceResInt(@DrawableRes image: Int) {
 @BindingAdapter("srcRes")
 fun <T> AppCompatImageView.setSrcResource(image: String) {
     val res = when (image) {
-        "himalaia" -> R.drawable.himalaia
+        "Nova Iorque" -> R.drawable.nova_york
+        "Himalaia" -> R.drawable.himalaia
         "riodejaneiro" -> R.drawable.corcovado
-        "miami" -> R.drawable.miami
-        "toronto" -> R.drawable.toronto
+        "Miami" -> R.drawable.miami
+        "Toronto" -> R.drawable.toronto
         "drakensberg" -> R.drawable.drakensberg
-        "portogalinhas" -> R.drawable.porto_de_galinhas
+        "Porto de Galinhas" -> R.drawable.porto_de_galinhas
         else -> R.drawable.sem_imagem
     }
     ContextCompat.getDrawable(this.context, res).run {

@@ -11,21 +11,7 @@
         android:label="Form1Fragment"
         tools:layout="@layout/fragment_form1">
         <action
-            android:id="@+id/action_form1Fragment_to_secondFormFragment"
-            app:destination="@id/secondFormFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/secondFormFragment"
-        android:name="br.com.hacksmiles.ui.secondscreen.SecondFormFragment"
-        android:label="SecondFormFragment"
-        tools:layout="@layout/fragment_second_form">
-
-        <argument
-            android:name="userData"
-            app:argType="br.com.hacksmiles.data.model.FormUserData"
-            app:nullable="false" />
-        <action
-            android:id="@+id/action_secondFormFragment_to_thirdFromFragment"
+            android:id="@+id/action_form1Fragment_to_thirdFromFragment"
             app:destination="@id/thirdFromFragment" />
     </fragment>
     <fragment
