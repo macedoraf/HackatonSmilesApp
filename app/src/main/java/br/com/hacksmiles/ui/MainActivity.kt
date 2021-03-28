@@ -23,17 +23,11 @@ import retrofit2.create
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
-
     lateinit var repository: Repository
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.setupView()
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.title = getString(R.string.app_name)
-
         repository = Repository(
             Retrofit.Builder()
                 .client(
@@ -45,6 +39,10 @@ class MainActivity : AppCompatActivity() {
                 .addConverterFactory(GsonConverterFactory.create()).build()
                 .create<AppService>()
         )
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.setupView()
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.title = getString(R.string.app_name)
     }
 
     override fun onStart() {
