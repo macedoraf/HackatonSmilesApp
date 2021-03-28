@@ -37,7 +37,7 @@ class Repository(private val service: AppService) {
             33,
             "33%",
             "86.800 milhas",
-            "-Passaporte"
+            "-Passaporte\n-Visto de entrada"
         ))
     }
 }
