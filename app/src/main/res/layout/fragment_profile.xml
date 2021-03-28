@@ -1,175 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
     tools:context=".ui.profile.ProfileFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/ic_baseline_account_circle_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_hello"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginStart="10dp"
+        android:text="@string/hello_user"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_profile"
+        app:layout_constraintStart_toEndOf="@id/iv_profile"
+        app:layout_constraintTop_toTopOf="@id/iv_profile" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_profile"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="25dp"
-            android:src="@drawable/ic_baseline_account_circle_24"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_edit_profile"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/ic_baseline_edit_24"
+        app:layout_constraintBottom_toBottomOf="@id/tv_hello"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/tv_hello"
+        app:layout_constraintTop_toTopOf="@id/tv_hello" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_hello"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintStart_toEndOf="@id/iv_profile"
-            app:layout_constraintTop_toTopOf="@id/iv_profile"
-            app:layout_constraintBottom_toBottomOf="@id/iv_profile"
-            android:text="Olá, Rafael!"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_badges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/you_have_badges"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_profile" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_edit_profile"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintStart_toEndOf="@id/tv_hello"
-            app:layout_constraintTop_toTopOf="@id/tv_hello"
-            app:layout_constraintBottom_toBottomOf="@id/tv_hello"
-            android:src="@drawable/ic_baseline_edit_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_badge1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_hackatonsmilesbadge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_badges" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_badges"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Selos"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_profile"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="20dp"
-            android:textSize="30sp"
-            app:layout_constraintHorizontal_bias="0"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_badge1_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/first_planning"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_badge1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/iv_badge1"
+        app:layout_constraintTop_toTopOf="@id/iv_badge1"
+        app:layout_constraintVertical_bias="0.1" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_badge1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_badges"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/ic_hackatonsmilesbadge"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_badge1_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/create_your_first_planning"
+        app:layout_constraintBottom_toBottomOf="@id/iv_badge1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/iv_badge1"
+        app:layout_constraintTop_toBottomOf="@id/tv_badge1_title"
+        app:layout_constraintVertical_bias="0.1" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_badge1_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@id/iv_badge1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/iv_badge1"
-            app:layout_constraintBottom_toBottomOf="@id/iv_badge1"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintVertical_bias="0.1"
-            android:text="Primer planejamento"
-            android:layout_marginStart="10dp"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_badge2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_hackatonsmilesbadge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_badge1" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_badge1_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/iv_badge1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_badge1_title"
-            app:layout_constraintBottom_toBottomOf="@id/iv_badge1"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintVertical_bias="0.1"
-            android:text="Cria o seu primer planejamento"
-            android:layout_marginStart="10dp"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_badge2_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/first_flight"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_badge2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/iv_badge2"
+        app:layout_constraintTop_toTopOf="@id/iv_badge2"
+        app:layout_constraintVertical_bias="0.1" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_badge2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:layout_constraintTop_toBottomOf="@id/iv_badge1"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/ic_hackatonsmilesbadge"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_badge2_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/first_flight_description"
+        app:layout_constraintBottom_toBottomOf="@id/iv_badge2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/iv_badge2"
+        app:layout_constraintTop_toBottomOf="@id/tv_badge2_title"
+        app:layout_constraintVertical_bias="0.1" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_badge2_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@id/iv_badge2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/iv_badge2"
-            app:layout_constraintBottom_toBottomOf="@id/iv_badge2"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintVertical_bias="0.1"
-            android:text="Primer voo"
-            android:layout_marginStart="10dp"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_badge3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_hackatonsmilesbadge_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_badge2" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_badge2_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/iv_badge2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_badge2_title"
-            app:layout_constraintBottom_toBottomOf="@id/iv_badge2"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintVertical_bias="0.1"
-            android:text="Realiza um voo planificado"
-            android:layout_marginStart="10dp"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_badge3_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/first_pack"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_badge3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/iv_badge3"
+        app:layout_constraintTop_toTopOf="@id/iv_badge3"
+        app:layout_constraintVertical_bias="0.1" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_badge3"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:layout_constraintTop_toBottomOf="@id/iv_badge2"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/ic_hackatonsmilesbadge_gray"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_badge3_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/first_pack_description"
+        app:layout_constraintBottom_toBottomOf="@id/iv_badge3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/iv_badge3"
+        app:layout_constraintTop_toBottomOf="@id/tv_badge3_title"
+        app:layout_constraintVertical_bias="0.1" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_badge3_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@id/iv_badge3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/iv_badge3"
-            app:layout_constraintBottom_toBottomOf="@id/iv_badge3"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintVertical_bias="0.1"
-            android:text="Primeiro pacote"
-            android:layout_marginStart="10dp"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_badge3_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/iv_badge3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_badge3_title"
-            app:layout_constraintBottom_toBottomOf="@id/iv_badge3"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintVertical_bias="0.1"
-            android:text="Cria seu primeiro pacote de voo + hotel"
-            android:layout_marginStart="10dp"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

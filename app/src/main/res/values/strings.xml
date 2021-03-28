@@ -40,4 +40,13 @@
     <string name="_89_percent">89%</string>
     <string name="trip_requirements">Requerimentos da viajem:</string>
     <string name="example_requirements">- Visto de entrada\n- Pasaporte\n- Mascar N94 ou afim\n- Vacina contra Covid</string>
+    <string name="next_trips">Proximas Viagens</string>
+    <string name="hello_user">Olá, Rafael!</string>
+    <string name="you_have_badges">Você tem Selos!</string>
+    <string name="first_planning">Primer planejamento</string>
+    <string name="create_your_first_planning">Cria o seu primer planejamento</string>
+    <string name="first_flight">Primer voo</string>
+    <string name="first_flight_description">Realiza um voo planificado</string>
+    <string name="first_pack">Primeiro pacote</string>
+    <string name="first_pack_description">Cria seu primeiro pacote de voo + hotel</string>
 </resources>
