@@ -13,28 +13,28 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="25sp"
+        tools:text="Cancun - 25 de Março de 2022"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Cancun - 25 de Março de 2022" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_marginTop="20dp"
         android:id="@+id/detail_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detail_title"
-        tools:src="@drawable/common_google_signin_btn_icon_light_focused" />
+        android:src="@drawable/porto_de_galinhas" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/progress_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Progresso: "
+        android:text="Progresso: 33%"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detail_image"
         tools:text="Progresso: 66%" />
@@ -44,6 +44,7 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:progress="33"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toEndOf="@id/progress_text"
@@ -53,25 +54,23 @@
         android:id="@+id/tv_need_add_money"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:layout_marginTop="10dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/progress_text"
-        tools:text="Neste mes você precisa adicionar R$ 50 amais para manter o planejamento atual"
+        android:text="Neste mes você precisa adicionar R$ 50 amais para manter o planejamento atual"
         tools:visibility="visible" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_need_add_money_disclaimer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_need_add_money"
-        tools:text="*Se não conseguir bater a meta desse mes, o sistema va recalcular o monto que precisa adicinaor por mes para cumplir o seu objectivo"
+        android:text="*Se não conseguir bater a meta desse mes, o sistema va recalcular o monto que precisa adicinaor por mes para cumplir o seu objectivo"
         tools:visibility="visible" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -86,17 +85,31 @@
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/tv_need_add_money_disclaimer" />
 
-    <!--    Nesse recyclerViews va ter checkboxes-->
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_checkboxes"
-        android:layout_width="match_parent"
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:checked="false"
         android:layout_height="wrap_content"
+        android:text="Passaporte"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_requirements"
-        app:layout_constraintHorizontal_bias="0"
-        tools:listitem="@android:layout/simple_list_item_checked"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_requirements" />
 
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Mascara"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Visto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

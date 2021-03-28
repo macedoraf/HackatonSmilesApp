@@ -20,7 +20,7 @@ class HomeViewState {
             var resImage: Int = R.drawable.img_calor
             var progress: Int = 66
             var progressFormatted: String = progress.convertToPercentage()
-            var valueMoney: String = 1200.0F.convertToMoneyString()
+            var valueMoney: String = 1200.0F.convertToMilesString()
             var stillMissingDescription: String = "- Passaporte\n- Máscara"
 
             fun build(): TripProgressItem = TripProgressItem(title, resImage, progress, progressFormatted, valueMoney, stillMissingDescription)
@@ -34,4 +34,7 @@ private fun Int.convertToPercentage(): String {
 
 private fun Float.convertToMoneyString(): String {
     return "R$ $this"
+}
+private fun Float.convertToMilesString(): String {
+    return "$this milhas"
 }
