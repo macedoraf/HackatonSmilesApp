@@ -44,5 +44,23 @@
     <fragment
         android:id="@+id/thirdFromFragment"
         android:name="br.com.hacksmiles.ui.thridscreen.ThirdFromFragment"
-        android:label="ThirdFromFragment" />
+        android:label="ThirdFromFragment" >
+        <action
+            android:id="@+id/action_thirdFromFragment_to_fourthFragment"
+            app:destination="@id/fourthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="br.com.hacksmiles.ui.fourthscreen.FourthFragment"
+        android:label="fragment_fourth"
+        tools:layout="@layout/fragment_fourth" >
+        <action
+            android:id="@+id/action_fourthFragment_to_fifthFragment"
+            app:destination="@id/fifthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fifthFragment"
+        android:name="br.com.hacksmiles.ui.fifthscreen.FifthFragment"
+        android:label="fragment_fifth"
+        tools:layout="@layout/fragment_fifth" />
 </navigation>

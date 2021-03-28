@@ -15,4 +15,13 @@
     <string name="mountain">Montanha</string>
     <string name="next">Seguinte</string>
     <string name="when_next_vacations">Quando são as suas proximas férias?</string>
+    <string name="back_to_home">Voltar para a Home</string>
+    <string name="hire_here">Contrate aqui!</string>
+    <string name="hire_a_transport">Contrate um transporte local pelo nosso aplicativo, e economize!</string>
+    <string name="use_miles">Pode usar essas milhas para disminuir R$100 do coste do voo!</string>
+    <string name="use_creditcard">Com um consumo de R$ 1000 por mes nesse cartão, você consegue 7000 milhas para sua viagem!</string>
+    <string name="smiles_card">Notamos que você tem o Cartão Smiles… Isso é ótimo!</string>
+    <string name="months_left">Faltam 7 meses para viajar!</string>
+    <string name="cheers">Você esta um passo mais perto de realizar a viagem dos seu sonhos!</string>
+    <string name="congratulations">Parabens!</string>
 </resources>

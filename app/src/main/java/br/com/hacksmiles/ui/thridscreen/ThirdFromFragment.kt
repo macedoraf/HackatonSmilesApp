@@ -19,7 +19,7 @@ class ThirdFromFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentThirdFormBinding.inflate(inflater)
         binding.setupView()
         return binding.root
