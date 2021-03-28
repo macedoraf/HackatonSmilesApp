@@ -1,8 +1,6 @@
 package br.com.hacksmiles.ui.firstscreen
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,13 +11,9 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import br.com.hacksmiles.R
 import br.com.hacksmiles.databinding.FragmentForm1Binding
-import br.com.hacksmiles.ui.climate.ClimateAdapter
 import com.google.android.material.snackbar.Snackbar
-import java.text.SimpleDateFormat
 import java.util.*
 
 const val FORCE_GO_NEXT = true
@@ -56,11 +50,6 @@ class FirstFormFragment : Fragment() {
             setupView()
         }
         return binding.root
-    }
-
-    override fun onStart() {
-        super.onStart()
-        viewModel.fetchData()
     }
 
     private fun FragmentForm1Binding.setupView() {

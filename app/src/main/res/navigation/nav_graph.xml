@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/secondFormFragment"
-        android:name="br.com.hacksmiles.ui.seoncscreen.SecondFormFragment"
+        android:name="br.com.hacksmiles.ui.secondscreen.SecondFormFragment"
         android:label="SecondFormFragment" >
         <action
             android:id="@+id/action_secondFormFragment_to_thirdFromFragment"
