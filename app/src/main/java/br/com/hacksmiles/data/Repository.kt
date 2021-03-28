@@ -3,6 +3,7 @@ package br.com.hacksmiles.data
 import br.com.hacksmiles.R
 import br.com.hacksmiles.ui.thridscreen.ThirdFromViewState
 
+var nome = "Rafael"
 class Repository {
 
     fun fetchDestinies(): List<ThirdFromViewState.DestinyCardUI> {

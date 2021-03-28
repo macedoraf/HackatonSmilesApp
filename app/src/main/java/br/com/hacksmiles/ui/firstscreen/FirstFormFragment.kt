@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import br.com.hacksmiles.R
+import br.com.hacksmiles.data.nome
 import br.com.hacksmiles.databinding.FragmentForm1Binding
 import com.google.android.material.snackbar.Snackbar
 import java.util.*
@@ -98,6 +99,7 @@ class FirstFormFragment : Fragment() {
 
         btNext.setOnClickListener {
             viewModel.viewState.name = etName.text.toString()
+            nome = viewModel.viewState.name
             viewModel.viewState.birthdayDate = calendarBirthDay.text.toString()
             val result = viewModel.validateForm()
             if (result.first) {

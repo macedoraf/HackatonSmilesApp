@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.hacksmiles.R
+import br.com.hacksmiles.data.nome
 import br.com.hacksmiles.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
@@ -23,6 +24,6 @@ class ProfileFragment : Fragment() {
     }
 
     private fun FragmentProfileBinding.setupView() {
-
+        this.tvHello.text = "Olá $nome !"
     }
 }
