@@ -39,6 +39,9 @@
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tripDetailFragment"
+            app:destination="@id/tripDetailFragment" />
         <argument
             android:name="createNew"
             app:argType="boolean"
@@ -104,4 +107,8 @@
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/tripDetailFragment"
+        android:name="br.com.hacksmiles.ui.tripdetail.TripDetailFragment"
+        android:label="TripDetailFragment" />
 </navigation>
