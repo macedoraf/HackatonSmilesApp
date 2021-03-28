@@ -13,13 +13,25 @@ class ThirdFromViewState {
         val smilesValue: String,
         val resImage: Int
     ) {
+
+
         class Builder {
+            val money = (300..2000).random()
+
             var title: String = "Viagem Teste"
-            var moneyValue: String = "R$100,00"
-            var smilesValue: String = "5.000 milhas"
+            var moneyValue: String = money.convertToMoneyString()
+            var smilesValue: String = (money*30).convertToMiles()
             var resImage: Int = R.drawable.sem_imagem
 
             fun build(): DestinyCardUI = DestinyCardUI(title, moneyValue, smilesValue, resImage)
         }
     }
+}
+
+private fun Int.convertToMiles(): String {
+    return "$this milhas"
+}
+
+private fun Int.convertToMoneyString(): String {
+    return "R$ $this"
 }
