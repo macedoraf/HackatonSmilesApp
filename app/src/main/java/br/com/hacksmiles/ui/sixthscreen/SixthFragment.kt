@@ -5,14 +5,26 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import br.com.hacksmiles.R
+import br.com.hacksmiles.databinding.FragmentSixthBinding
 
 class SixthFragment : Fragment() {
+    lateinit var binding: FragmentSixthBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_sixth, container, false)
+    ): View {
+        binding = FragmentSixthBinding.inflate(inflater).apply {
+            setupView()
+        }
+        return binding.root
+    }
+
+    private fun FragmentSixthBinding.setupView() {
+        btnGoHome.setOnClickListener {
+            findNavController().navigate(SixthFragmentDirections.actionSixthFragmentToHomeFragment())
+        }
     }
 }
