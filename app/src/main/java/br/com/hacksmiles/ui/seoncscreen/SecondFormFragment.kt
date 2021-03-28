@@ -28,7 +28,7 @@ class SecondFormFragment : Fragment() {
     }
 
     private fun FragmentSecondFormBinding.setupView() {
-        nextButton.setOnClickListener { findNavController().navigate(SecondFormFragmentDirections.actionSecondFormFragmentToThirdFromFragment()) }
+        btNext.setOnClickListener { findNavController().navigate(SecondFormFragmentDirections.actionSecondFormFragmentToThirdFromFragment()) }
     }
 
 
