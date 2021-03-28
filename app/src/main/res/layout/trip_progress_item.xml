@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/trip_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        android:textSize="25sp"
+        tools:text="Cancun - 25 de Março de 2022" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/trip_item_image"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/trip_item_title"
+        app:layout_constraintVertical_bias="0"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/common_google_signin_btn_icon_dark"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/progress_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/trip_item_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/trip_item_image"
+        android:textSize="15sp"
+        tools:text="Progresso: 66%"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/progress_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_title"
+        app:layout_constraintHorizontal_bias="0"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/final_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/progressBar"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
+        tools:text="R$1500"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_description"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/trip_item_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/final_value"
+        app:layout_constraintBottom_toBottomOf="@id/trip_item_image"
+        tools:text="Description"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
