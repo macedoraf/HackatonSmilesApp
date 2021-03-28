@@ -1,207 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fourthscreen.FourthFragment">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/iv_destiny"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/img_calor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_title"
-        style="@style/DefaultTextView.Large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Destino"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_destiny" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_destiny"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_calor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_using_money"
-        style="@style/DefaultTextView.Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:text="Usando dinheiro:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_title" />
-
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_using_money_value"
-        style="@style/DefaultTextView.Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:text="R$ 1500"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@id/tv_using_money"
-        app:layout_constraintTop_toTopOf="@id/tv_using_money" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_using_miles"
-        style="@style/DefaultTextView.Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:text="Usando milhas aereas:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_using_money" />
-
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_using_miles_value"
-        style="@style/DefaultTextView.Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:text="50.000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@id/tv_using_miles"
-        app:layout_constraintTop_toTopOf="@id/tv_using_miles" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_using_hybrid"
-        style="@style/DefaultTextView.Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:text="Usando dinheiro e milhas aereas:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_using_miles" />
-
-    <RadioGroup
-        android:id="@+id/rg_options"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_using_hybrid">
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/rb_1"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            style="@style/DefaultTextView.Large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Opção 1" />
+            android:text="@string/destiny"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_destiny" />
 
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/rb_2"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_using_money"
+            style="@style/DefaultTextView.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Opção 2" />
+            android:layout_marginHorizontal="30dp"
+            android:text="@string/using_money"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/rb_3"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_using_money_value"
+            style="@style/DefaultTextView.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Opção 3" />
-    </RadioGroup>
+            android:layout_marginHorizontal="30dp"
+            android:text="@string/money_1500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@id/tv_using_money"
+            app:layout_constraintTop_toTopOf="@id/tv_using_money" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_vacine_rate"
-        style="@style/DefaultTextView.Large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Taxa de vacinação na cidade:"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rg_options" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_this_moment"
-        style="@style/DefaultTextView.Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:text="Nesse momento:"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_vacine_rate" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_this_moment_value"
-        style="@style/DefaultTextView.Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginEnd="20dp"
-        android:text="15%"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@id/tv_this_moment"
-        app:layout_constraintTop_toBottomOf="@id/tv_vacine_rate" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_planned"
-        style="@style/DefaultTextView.Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:text="Esperado na data da viagem:"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_this_moment" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_planned_value"
-        style="@style/DefaultTextView.Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginEnd="20dp"
-        android:text="89%"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@id/tv_planned"
-        app:layout_constraintTop_toTopOf="@id/tv_planned" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_requirements"
-        style="@style/DefaultTextView.Large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Requerimentos da viajem:"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_planned" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_using_miles"
+            style="@style/DefaultTextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="@string/using_miles"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_using_money" />
 
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_requirements_description"
-        style="@style/DefaultTextView.Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:text="- Visto de entrada\n- Pasaporte\n- Mascar N94 ou afim\n- Vacina contra Covid"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_requirements" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_using_miles_value"
+            style="@style/DefaultTextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="@string/_50_000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@id/tv_using_miles"
+            app:layout_constraintTop_toTopOf="@id/tv_using_miles" />
 
-    <Button
-        android:id="@+id/bt_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_using_hybrid"
+            style="@style/DefaultTextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="@string/using_money_and_miles"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_using_miles" />
+
+        <RadioGroup
+            android:id="@+id/rg_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_using_hybrid">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/opotion_1" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/opotion_2" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/opotion_3" />
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_vacine_rate"
+            style="@style/DefaultTextView.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vacine_rate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rg_options" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_this_moment"
+            style="@style/DefaultTextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="@string/this_moment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_vacine_rate" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_this_moment_value"
+            style="@style/DefaultTextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/_15_percent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@id/tv_this_moment"
+            app:layout_constraintTop_toBottomOf="@id/tv_vacine_rate" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_planned"
+            style="@style/DefaultTextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="@string/expected_vacine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_this_moment" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_planned_value"
+            style="@style/DefaultTextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/_89_percent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@id/tv_planned"
+            app:layout_constraintTop_toTopOf="@id/tv_planned" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_requirements"
+            style="@style/DefaultTextView.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/trip_requirements"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_planned" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_requirements_description"
+            style="@style/DefaultTextView.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="@string/example_requirements"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_requirements" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

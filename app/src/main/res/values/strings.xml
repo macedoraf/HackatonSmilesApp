@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">TriPlanner</string>
     <string name="vamos_planificar_a_sua_viagem">Vamos planificar a sua viagem?</string>
     <string name="quantas_pessoas">Quantas pessoas?</string>
@@ -24,4 +24,20 @@
     <string name="months_left">Faltam 7 meses para viajar!</string>
     <string name="cheers">Você esta um passo mais perto de realizar a viagem dos seu sonhos!</string>
     <string name="congratulations">Parabens!</string>
+    <string name="destiny">Destino</string>
+    <string name="using_money">Usando dinheiro:</string>
+    <string name="money_1500">R$ 1500</string>
+    <string name="using_miles">Usando milhas aereas:</string>
+    <string name="_50_000">50.000</string>
+    <string name="using_money_and_miles">Usando dinheiro e milhas aereas:</string>
+    <string name="opotion_1">Opção 1</string>
+    <string name="opotion_2">Opção 2</string>
+    <string name="opotion_3">Opção 3</string>
+    <string name="vacine_rate">Taxa de vacinação na cidade:</string>
+    <string name="this_moment" tools:ignore="Typos">Nesse momento:</string>
+    <string name="_15_percent">15%</string>
+    <string name="expected_vacine">Esperado na data da viagem:</string>
+    <string name="_89_percent">89%</string>
+    <string name="trip_requirements">Requerimentos da viajem:</string>
+    <string name="example_requirements">- Visto de entrada\n- Pasaporte\n- Mascar N94 ou afim\n- Vacina contra Covid</string>
 </resources>
