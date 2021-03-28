@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginHorizontal="30dp"
+    android:paddingHorizontal="@dimen/padding_horizontal"
     tools:context=".ui.fifthscreen.FifthFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -19,17 +19,20 @@
     <RadioGroup
         android:id="@+id/rg_travel_type"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
+
         <RadioButton
             android:id="@+id/rb_economy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Económico" />
+
         <RadioButton
             android:id="@+id/rb_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Comforto" />
+
         <RadioButton
             android:id="@+id/rb_luxury"
             android:layout_width="wrap_content"
@@ -50,22 +53,22 @@
         android:id="@+id/rv_combos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/package_combo_item"
-        tools:itemCount="1">
+        tools:itemCount="1"
+        tools:listitem="@layout/package_combo_item">
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 
     <Button
         android:id="@+id/bt_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:layout_gravity="end"
+        android:layout_marginBottom="16dp"
         android:text="@string/next" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

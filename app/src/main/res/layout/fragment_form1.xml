@@ -20,7 +20,7 @@
             android:id="@+id/cl_form_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingHorizontal="30dp">
+            android:paddingHorizontal="@dimen/padding_horizontal">
 
 
             <androidx.appcompat.widget.AppCompatTextView
