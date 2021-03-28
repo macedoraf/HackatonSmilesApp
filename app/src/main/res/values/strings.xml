@@ -24,15 +24,15 @@
     <string name="months_left">Faltam 3 meses para viajar!</string>
     <string name="cheers">Você esta um passo mais perto de realizar a viagem dos seu sonhos!</string>
     <string name="congratulations">Parabens!</string>
-    <string name="destiny">Destino</string>
+    <string name="destiny">Porto de Galhina</string>
     <string name="using_money">Usando dinheiro:</string>
     <string name="money_1500">R$ 1500</string>
     <string name="using_miles">Usando milhas aereas:</string>
     <string name="_50_000">50.000</string>
     <string name="using_money_and_miles">Usando dinheiro e milhas aereas:</string>
-    <string name="opotion_1">Opção 1</string>
-    <string name="opotion_2">Opção 2</string>
-    <string name="opotion_3">Opção 3</string>
+    <string name="opotion_1">R$ 2.896</string>
+    <string name="opotion_2">86.800 milhas</string>
+    <string name="opotion_3">R$ 2.896 + 86.800 milhas</string>
     <string name="vacine_rate">Taxa de vacinação na cidade:</string>
     <string name="this_moment" tools:ignore="Typos">Nesse momento:</string>
     <string name="_15_percent">15%</string>

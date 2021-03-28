@@ -34,69 +34,27 @@
             app:layout_constraintTop_toBottomOf="@id/iv_destiny" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_using_money"
-            style="@style/DefaultTextView.Medium"
+            android:id="@+id/how_to_pay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:text="@string/using_money"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_title" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_using_money_value"
             style="@style/DefaultTextView.Medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:text="@string/money_1500"
+            android:text="Cómo deseja pagar pela viagem?"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toEndOf="@id/tv_using_money"
-            app:layout_constraintTop_toTopOf="@id/tv_using_money" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_using_miles"
-            style="@style/DefaultTextView.Medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_bias="0"
             android:layout_marginHorizontal="30dp"
-            android:text="@string/using_miles"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_using_money" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_using_miles_value"
-            style="@style/DefaultTextView.Medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:text="@string/_50_000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toEndOf="@id/tv_using_miles"
-            app:layout_constraintTop_toTopOf="@id/tv_using_miles" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_using_hybrid"
-            style="@style/DefaultTextView.Medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:text="@string/using_money_and_miles"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_using_miles" />
-
-        <RadioGroup
+               <RadioGroup
             android:id="@+id/rg_options"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_using_hybrid">
+            app:layout_constraintTop_toBottomOf="@id/how_to_pay">
 
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:id="@+id/rb_1"
