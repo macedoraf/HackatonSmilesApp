@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -120,11 +119,15 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
+                        android:layout_marginStart="2dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="-2"
+                        android:shadowDy="1"
+                        android:shadowRadius="0.5"
+                        android:text="@string/beach"
                         android:textColor="@android:color/white"
                         app:layout_constraintStart_toStartOf="@id/img_beach"
-                        app:layout_constraintTop_toTopOf="@id/img_beach"
-                        tools:text="Praia" />
-
+                        app:layout_constraintTop_toTopOf="@id/img_beach" />
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/img_snow"
@@ -142,10 +145,15 @@
                         android:id="@+id/tv_snow"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="-2"
+                        android:shadowDy="1"
+                        android:shadowRadius="0.5"
+                        android:text="@string/snow"
                         android:textColor="@android:color/white"
                         app:layout_constraintStart_toStartOf="@id/img_snow"
-                        app:layout_constraintTop_toTopOf="@id/img_snow"
-                        tools:text="Neve" />
+                        app:layout_constraintTop_toTopOf="@id/img_snow" />
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/img_city"
@@ -164,10 +172,15 @@
                         android:id="@+id/tv_city"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="-2"
+                        android:shadowDy="1"
+                        android:shadowRadius="0.5"
+                        android:text="@string/city"
                         android:textColor="@android:color/white"
                         app:layout_constraintStart_toStartOf="@id/img_city"
-                        app:layout_constraintTop_toTopOf="@id/img_city"
-                        tools:text="Cidade" />
+                        app:layout_constraintTop_toTopOf="@id/img_city" />
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/img_mountains"
@@ -185,10 +198,15 @@
                         android:id="@+id/tv_mountain"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="-2"
+                        android:shadowDy="1"
+                        android:shadowRadius="0.5"
+                        android:text="@string/mountain"
                         android:textColor="@android:color/white"
                         app:layout_constraintStart_toStartOf="@id/img_mountains"
-                        app:layout_constraintTop_toTopOf="@id/img_mountains"
-                        tools:text="Montanha" />
+                        app:layout_constraintTop_toTopOf="@id/img_mountains" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -199,7 +217,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:text="Seguinte"
+                android:text="@string/next"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
