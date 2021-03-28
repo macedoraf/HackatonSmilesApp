@@ -16,7 +16,7 @@ class HomeViewState {
         val stillMissingDescription: String
     ){
         class Builder{
-            var title: String = "Cancun - 25 de Março de 2022"
+            var title: String = "Porto de Galhinas - 25 de Março de 2022"
             var resImage: Int = R.drawable.img_calor
             var progress: Int = 66
             var progressFormatted: String = progress.convertToPercentage()

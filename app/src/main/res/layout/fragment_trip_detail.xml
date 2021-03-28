@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="25sp"
-        tools:text="Cancun - 25 de Março de 2022"
+        tools:text="Porto de Galhinas - 25 de Março de 2022"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

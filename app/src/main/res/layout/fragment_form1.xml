@@ -38,6 +38,7 @@
 
 
             <LinearLayout
+                android:id="@+id/ll_first_screen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -227,6 +228,27 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/when_to_go"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="2dp"
+                android:text="Quando são suas ferias?"
+                app:layout_constraintBottom_toBottomOf="@id/bt_select_date"
+                app:layout_constraintEnd_toStartOf="@+id/bt_select_date"
+                app:layout_constraintStart_toStartOf="@+id/ll_first_screen"
+                app:layout_constraintTop_toTopOf="@+id/bt_select_date" />
+
+            <Button
+                android:id="@+id/bt_select_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Selecionar datas"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_first_screen" />
 
             <Button
                 android:id="@+id/bt_next"

@@ -10,9 +10,12 @@
         android:name="br.com.hacksmiles.ui.firstscreen.FirstFormFragment"
         android:label="Form1Fragment"
         tools:layout="@layout/fragment_form1">
+<!--        <action-->
+<!--            android:id="@+id/action_form1Fragment_to_secondFormFragment"-->
+<!--            app:destination="@id/secondFormFragment" />-->
         <action
-            android:id="@+id/action_form1Fragment_to_secondFormFragment"
-            app:destination="@id/secondFormFragment" />
+            android:id="@+id/action_form1Fragment_to_thirdFromFragment"
+            app:destination="@id/thirdFromFragment" />
     </fragment>
     <fragment
         android:id="@+id/secondFormFragment"

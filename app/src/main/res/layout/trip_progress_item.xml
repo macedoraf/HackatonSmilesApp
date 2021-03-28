@@ -26,7 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0"
-            tools:text="Cancun - 25 de Março de 2022" />
+            tools:text="Porto de Galhinas - 25 de Março de 2022" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/trip_item_image"

@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import br.com.hacksmiles.R
 import br.com.hacksmiles.data.nome
 import br.com.hacksmiles.databinding.FragmentForm1Binding
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.snackbar.Snackbar
 import java.util.*
 
@@ -97,6 +98,21 @@ class FirstFormFragment : Fragment() {
             selectPreference("Montanha")
         }
 
+        btSelectDate.setOnClickListener {
+            val dateRangePicker =
+                MaterialDatePicker.Builder.dateRangePicker()
+                    .setTitleText("Selecionar datas das ferias")
+                    .setSelection(
+                        androidx.core.util.Pair(
+                            MaterialDatePicker.thisMonthInUtcMilliseconds(),
+                            MaterialDatePicker.todayInUtcMilliseconds()
+                        )
+                    )
+                    .build()
+
+            dateRangePicker.show(requireActivity().supportFragmentManager, "")
+        }
+
         btNext.setOnClickListener {
             viewModel.viewState.name = etName.text.toString()
             nome = viewModel.viewState.name
@@ -104,7 +120,7 @@ class FirstFormFragment : Fragment() {
             val result = viewModel.validateForm()
             if (result.first) {
                 findNavController().navigate(
-                    FirstFormFragmentDirections.actionForm1FragmentToSecondFormFragment(
+                    FirstFormFragmentDirections.actionForm1FragmentToThirdFromFragment(
                         result.second
                     )
                 )
