@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="30dp"
+    tools:context=".ui.fifthscreen.FifthFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        style="@style/DefaultTextView.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Qual é o tipo de viagem que você deseja?" />
+
+    <RadioGroup
+        android:id="@+id/rg_travel_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        <RadioButton
+            android:id="@+id/rb_economy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Económico" />
+        <RadioButton
+            android:id="@+id/rb_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comforto" />
+        <RadioButton
+            android:id="@+id/rb_luxury"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Luxo" />
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_travel_combo_title"
+        style="@style/DefaultTextView.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Temos pacotes de viagem para você!" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_combos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/package_combo_item"
+        tools:itemCount="1">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/bt_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="end"
+        android:text="@string/next" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
