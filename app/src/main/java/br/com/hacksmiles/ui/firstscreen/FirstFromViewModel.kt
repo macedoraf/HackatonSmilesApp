@@ -19,5 +19,6 @@ class FirstFromViewModel : ViewModel() {
                 && viewState.birthdayDate.isNotBlank()
                 && viewState.name.isNotBlank()
                 && viewState.selectedClimate.isNotBlank()
+                || FORCE_GO_NEXT
     }
 }

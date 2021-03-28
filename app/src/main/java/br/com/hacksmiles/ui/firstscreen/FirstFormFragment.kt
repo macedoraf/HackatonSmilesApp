@@ -22,6 +22,8 @@ import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
 import java.util.*
 
+const val FORCE_GO_NEXT = true
+
 class FirstFormFragment : Fragment() {
     lateinit var binding: FragmentForm1Binding
     val viewModel = FirstFromViewModel()
@@ -33,9 +35,6 @@ class FirstFormFragment : Fragment() {
             viewModel.viewState.howManyList
         )
     }
-
-
-    private val climateAdapter: ClimateAdapter by lazy { ClimateAdapter() }
 
     private val howManyListener = object : AdapterView.OnItemSelectedListener {
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
